@@ -26,6 +26,8 @@ dependencies = [
     "customtkinter",
     "python-dotenv",
     "pygame",
+    "appdirs",
+    "numpy"
 ]
 
 [project.optional-dependencies]
