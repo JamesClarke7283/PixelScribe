@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PixelScribe"
+dynamic = ["version"]
+description = "A simple and intuitive PixelArt creation tool"
+authors = [
+    {name = "James David Clarke", email = "james@jamesdavidclarke.com"},
+]
+license = {text = "GPL-3.0-or-later"}
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "pillow",
+    "customtkinter",
+    "python-dotenv",
+    "pygame",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "mypy",
+]
+
+[project.urls]
+Homepage = "https://github.com/JamesClarke7283/PixelScribe"
+"Bug Tracker" = "https://github.com/JamesClarke7283/PixelScribe/issues"
+
+[tool.setuptools]
+packages = ["src"]
+
+[project.scripts]
+pixelscribe = "src.app:main"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+ignore_missing_imports = true
